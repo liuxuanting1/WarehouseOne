@@ -1,10 +1,13 @@
+<!--
+ * @Description: 搜索组件
+-->
 <template>
     <div class="search_body">
         <div class="search_input">
             <div class="search_input_wrapper">
                 <i class="iconfont icon-sousuo"></i>
                 <input type="text" v-model="message">
-            </div>					
+            </div>
         </div>
         <div class="search_result">
             <h3>电影/电视剧/综艺</h3>
@@ -42,18 +45,22 @@ export default {
         }
     },
     methods : {
+        // 终止请求
         cancelRequest(){
             if(typeof this.source ==='function'){
                 this.source('终止请求')
             }
         }
     },
+    // watch监听允许做异步
     watch : {
         message(newVal){
             var that = this;
             var cityId = this.$store.state.city.id;
+            // 取消上一次请求
             this.cancelRequest();
             this.axios.get('/api/searchList?cityId='+ cityId +'&kw='+newVal,{
+                // 取消终止
                 cancelToken: new this.axios.CancelToken(function(c){
                     that.source = c;
                 })
