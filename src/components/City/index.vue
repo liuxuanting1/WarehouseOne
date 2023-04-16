@@ -87,9 +87,10 @@ export default {
   },
   // 代理数据
   mounted() {
+    // 取出本地存储
     var cityList = window.localStorage.getItem("cityList");
     var hotList = window.localStorage.getItem("hotList");
-
+    // 双重判断：同时存在
     if (cityList && hotList) {
       this.cityList = JSON.parse(cityList);
       this.hotList = JSON.parse(hotList);
@@ -178,6 +179,7 @@ export default {
     },
     handleToCity(nm, id) {
       this.$store.commit("city/CITY_INFO", { nm, id });
+    //   本地存储
       window.localStorage.setItem("nowNm", nm);
       window.localStorage.setItem("nowId", id);
       this.$router.push("/movie/nowPlaying");

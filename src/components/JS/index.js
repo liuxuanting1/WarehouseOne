@@ -13,7 +13,8 @@ export var messageBox = (function(){
             handleCancel : null,
             handleOk : null
         };
-    
+
+        // extend可以结合MessageBox返回一个新的类
         var MyComponent = Vue.extend(MessageBox);
 
         for(var attr in opts){

@@ -35,7 +35,7 @@
 
 <script>
 
-//import BScroll from 'better-scroll';
+// import BScroll from 'better-scroll';
 
 export default {
     name : 'NowPlaying',
@@ -57,12 +57,12 @@ export default {
                 this.movieList = res.data.data.movieList;
                 this.isLoading = false;
                 this.prevCityId = cityId;
-                /* this.$nextTick(()=>{
+                // 保证数据赋完值后界面渲染完后再进行回调
+                /* this.$nextTick(()=>{ 
                     var scroll = new BScroll( this.$refs.movie_body , {
                         tap : true,
                         probeType: 1
                     });
-                    
                     scroll.on('scroll',(pos)=>{
                         //console.log('scroll');
                         if( pos.y > 30 ){
@@ -82,15 +82,12 @@ export default {
                                         this.movieList = res.data.data.movieList;
                                         this.pullDownMsg = '';
                                     },1000);
-                                    
                                 }
                             });
-                            
                         }
                     });
 
                 }); */
-                
             }
         });
     },
@@ -114,7 +111,6 @@ export default {
                             this.movieList = res.data.data.movieList;
                             this.pullDownMsg = '';
                         },1000);
-                        
                     }
                 });
             }

@@ -1,3 +1,7 @@
+/*
+ * @Description: 封装better-scroll组件
+ */
+
 <template>
     <div class="wrapper" ref="wrapper">
         <slot></slot>

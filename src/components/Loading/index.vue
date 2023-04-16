@@ -1,3 +1,8 @@
+/*
+ * @Description: loader组件封装
+   在main中创建全局组件
+ */
+
 <template>
     <div class="loader"></div>
 </template>

@@ -1,3 +1,4 @@
+// 定位弹窗组件
 <template>
     <div class="messageBox">
         <h2>{{ title }}</h2>
