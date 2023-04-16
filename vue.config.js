@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = {
+  publicPath: "/miaomiao",
   //开发环境配置
   devServer : {
     // 反向代理
